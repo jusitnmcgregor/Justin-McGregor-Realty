@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Justin McGregor Realty</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Montserrat:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+<style>
+    :root {
+      --primary: #c8553d;
+      --secondary: #553d67;
+      --accent: #d4af37;
+      --dark: #1f2233;
+      --light: #ffffff;
+      --light-gray: #f4f5f7;
+      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+      --accent-gradient: linear-gradient(135deg, var(--accent), #d9b962);
+      --font-primary: 'Playfair Display', serif;
+      --font-secondary: 'Montserrat', sans-serif;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: var(--font-secondary);
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+      font-weight: 300;
+      letter-spacing: 0.3px;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.82)), 
+                  url('https://images.unsplash.com/photo-1613545325278-f24b0cae1224') no-repeat center center/cover;
+      z-index: -1;
+      background-attachment: fixed;
+    }
+    
+    h1, h2, h3 {
+      font-family: var(--font-primary);
+      font-weight: 400;
+    }
+    
+    header {
+      background: rgba(31, 34, 51, 0.98);
+      color: var(--light);
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+                  rgba(200, 85, 61, 0.1) 0%, 
+                  rgba(85, 61, 103, 0.1) 50%, 
+                  rgba(212, 175, 55, 0.1) 100%);
+      z-index: -1;
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 5rem;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #fff 10%, var(--accent) 50%, #fff 90%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+      position: relative;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+      animation: shimmer 3s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% {
+        background-position: -100% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+    
+    header h1::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(212, 175, 55, 0.5);
+    }
+    
+    header h1::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      z-index: -1;
+    }
+    
+    .hero {
+      background: linear-gradient(rgba(31,34,51,0.6), rgba(31,34,51,0.6)), 
+                url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') no-repeat center center/cover;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      padding: 4rem 2rem;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top right, rgba(200, 85, 61, 0.2), transparent 50%),
+                  radial-gradient(circle at bottom left, rgba(85, 61, 103, 0.2), transparent 50%);
+      z-index: 0;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+    
+    .hero h2 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      animation: fadeInDown 1s ease-out;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease-out 0.5s;
+      animation-fill-mode: both;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+    
+    .section {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(15px);
+      margin: 3rem auto;
+      max-width: 1200px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    }
+    
+    .section h2 {
+      color: var(--dark);
+      padding: 3rem 0 1.5rem;
+      position: relative;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+    
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+      box-shadow: 0 2px 5px rgba(212, 175, 55, 0.3);
+    }
+    
+    .valuation-section {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                  url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9') no-repeat center center/cover;
+      color: white;
+      padding: 5rem 2rem;
+      margin: 4rem auto;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .valuation-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(212, 175, 55, 0.2), transparent 70%);
+      z-index: 0;
+    }
+    
+    .valuation-section h2 {
+      font-size: 2.8rem;
+      color: #FFFFFF;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+      font-weight: 600;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      line-height: 1.3;
+    }
+    
+    .valuation-section h2::after {
+      display: none;
+    }
+    
+    .valuation-content {
+      position: relative;
+      z-index: 2;
+      background: rgba(31, 34, 51, 0.85);
+      border-radius: 15px;
+      padding: 3rem;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      max-width: 600px;
+      margin: 0 auto;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .valuation-section form {
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+    }
+    
+    .valuation-section input,
+    .valuation-section select,
+    .valuation-section button {
+      background: rgba(255,255,255,0.9);
+      border: none;
+    }
+    
+    .valuation-section button {
+      background: var(--accent);
+      color: var(--dark);
+      font-weight: 500;
+    }
+    
+    .valuation-section button:hover {
+      background: var(--accent-gradient);
+    }
+    
+    .features, .faq {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      padding: 2.5rem;
+      text-align: left;
+    }
+    
+    .feature, .faq-item {
+      background: rgba(244, 245, 247, 0.7);
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border-left: 3px solid transparent;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+    
+    .feature::before, .faq-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--accent));
+      transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    .feature:hover, .faq-item:hover {
+      transform: translateY(-5px) scale(1.01);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+    
+    .feature:hover::before, .faq-item:hover::before {
+      width: 6px;
+    }
+    
+    .feature h3 {
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+      font-size: 1.5rem;
+      position: relative;
+      display: inline-block;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+    
+    .feature h3::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 30px;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    .feature:hover h3::after {
+      width: 100%;
+    }
+    
+    .feature strong, .faq-item strong {
+      color: var(--secondary);
+      font-size: 1.3rem;
+      display: block;
+      margin-bottom: 0.8rem;
+      position: relative;
+      display: inline-block;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    
+    .feature strong::after, .faq-item strong::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 20px;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    .feature:hover strong::after, .faq-item:hover strong::after {
+      width: 100%;
+    }
+    
+    .feature p, .faq-item p {
+      font-weight: 300;
+      line-height: 1.8;
+      color: #555;
+      letter-spacing: 0.3px;
+    }
+    
+    .hot-listings {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+      padding: 2.5rem;
+    }
+    
+    .listing {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      text-align: left;
+      position: relative;
+      backdrop-filter: blur(15px);
+    }
+    
+    .listing:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    }
+    
+    .listing::before {
+      content: 'Featured';
+      position: absolute;
+      top: 20px;
+      right: -30px;
+      background: var(--accent-gradient);
+      color: var(--dark);
+      padding: 5px 30px;
+      transform: rotate(45deg);
+      font-size: 0.75rem;
+      font-weight: 500;
+      z-index: 1;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    .listing-container {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .listing-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent 70%, rgba(0,0,0,0.4));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .listing:hover .listing-container::after {
+      opacity: 1;
+    }
+    
+    .listing img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    .listing:hover img {
+      transform: scale(1.1);
+    }
+    
+    .listing-details {
+      padding: 1.8rem;
+      border-top: 3px solid var(--primary);
+      position: relative;
+      background: white;
+      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    .listing-details h3 {
+      margin-bottom: 0.8rem;
+      color: var(--dark);
+      font-family: var(--font-primary);
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+    
+    .listing-details p {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 400;
+      color: var(--primary);
+      letter-spacing: 0.3px;
+    }
+    
+    /* .listing-details p::after {
+      content: 'View Details';
+      font-size: 0.8rem;
+      padding: 0.4rem 1rem;
+      background: var(--accent);
+      color: var(--dark);
+      border-radius: 50px;
+      opacity: 0;
+      transform: translateX(20px);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }*/
+    
+    .listing:hover .listing-details p::after {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      max-width: 500px;
+      margin: 2.5rem auto;
+      padding: 2.5rem;
+      background: rgba(244, 245, 247, 0.7);
+      border-radius: 15px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+      backdrop-filter: blur(15px);
+    
+    }
+    
+    input, select, button, textarea {
+      padding: 1.2rem;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 8px;
+      font-family: var(--font-secondary);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.3px;
+      font-weight: 300;
+    }
+    
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+    }
+    
+    button {
+      background: var(--accent);
+      color: var(--dark);
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      border-radius: 50px;
+    }
+    
+    button::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.6s;
+    }
+    
+    button:hover::after {
+      left: 100%;
+    }
+    
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      background: var(--accent-gradient);
+    }
+    
+    footer {
+      background: rgba(31, 34, 51, 0.98);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 5rem;
+    }
+    
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+                rgba(200, 85, 61, 0.1) 0%, 
+                rgba(85, 61, 103, 0.1) 50%, 
+                rgba(212, 175, 55, 0.1) 100%);
+      z-index: 0;
+    }
+    
+    footer div {
+      position: relative;
+      z-index: 1;
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+    
+    .about-section {
+      background: linear-gradient(135deg, rgba(244, 245, 247, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%);
+      overflow: visible;
+    }
+    
+    .about-container {
+      display: flex;
+      flex-direction: row;
+      gap: 4rem;
+      align-items: center;
+      padding: 3rem;
+    }
+    
+    .about-image {
+      flex: 1;
+      position: relative;
+      max-width: 400px;
+    }
+    
+    .about-image img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      z-index: 2;
+    }
+    
+    .about-image::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      width: calc(100% - 30px);
+      height: calc(100% - 30px);
+      border: 2px solid var(--primary);
+      border-radius: 15px;
+      z-index: 1;
+    }
+    
+    .about-image::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      right: -15px;
+      width: calc(100% - 30px);
+      height: calc(100% - 30px);
+      border: 2px solid var(--accent);
+      border-radius: 15px;
+      z-index: 1;
+    }
+    
+    .about-content {
+      flex: 1.5;
+      text-align: left;
+    }
+    
+    .about-content h2 {
+      text-align: left;
+      margin-bottom: 2rem;
+      font-size: 2.8rem;
+    }
+    
+    .about-content h2::after {
+      left: 0;
+      transform: none;
+    }
+    
+    .about-content p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      margin-bottom: 1.8rem;
+      font-weight: 300;
+      color: #444;
+      letter-spacing: 0.3px;
+    }
+    
+    .about-signature {
+      font-family: var(--font-primary);
+      font-style: italic;
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-top: 2.5rem;
+    }
+    
+    .value-result {
+      font-size: 3.5rem;
+      font-weight: 400;
+      color: var(--accent);
+      margin: 2rem 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      background: linear-gradient(135deg, var(--accent), #fff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 1px;
+    }
+    
+    .contact-btn {
+      margin-top: 1.5rem;
+      background: var(--accent);
+      color: var(--dark);
+      font-weight: 500;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+    
+    .contact-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      background: var(--accent-gradient);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 50%, var(--dark) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 5s infinite;
+      display: inline-block;
+    }
+    
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translate3d(0, -40px, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    
+    @keyframes bounceIn {
+      from, 20%, 40%, 60%, 80%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      }
+      0% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+      }
+      20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+      }
+      40% {
+        transform: scale3d(0.9, 0.9, 0.9);
+      }
+      60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+      }
+      80% {
+        transform: scale3d(0.97, 0.97, 0.97);
+      }
+      to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+      }
+    }
+    
+    .animate__animated {
+      animation-duration: 1s;
+    }
+    
+    .animate__fadeInUp {
+      animation-name: fadeInUp;
+    }
+    
+    .animate__bounceIn {
+      animation-name: bounceIn;
+      animation-duration: 0.75s;
+    }
+    
+    @media (max-width: 992px) {
+      .about-container {
+        flex-direction: column;
+      }
+      
+      .about-content h2 {
+        text-align: center;
+      }
+      
+      .about-content h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .hero h2 {
+        font-size: 3rem;
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+      
+      .section h2, 
+      .valuation-section h2,
+      .about-content h2 {
+        font-size: 2rem;
+      }
+      
+      .about-container,
+      .features, 
+      .faq,
+      .hot-listings {
+        padding: 1.5rem;
+      }
+      
+      .feature, 
+      .faq-item {
+        padding: 1.5rem;
+      }
+      
+      .value-result {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add an animation class to sections when they become visible
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+            entry.target.style.opacity = 1;
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      document.querySelectorAll('.section').forEach(section => {
+        section.style.opacity = 0;
+        observer.observe(section);
+      });
+      
+      // Function to show home valuation form step 2
+      window.showValuationForm = function() {
+        const addressInput = document.querySelector('#valuation-step-1 input[name="address"]');
+        const addressValue = addressInput.value;
+        
+        const hiddenAddressInput = document.querySelector('#valuation-step-2 input[name="address"]');
+        hiddenAddressInput.value = addressValue;
+
+        document.getElementById('valuation-step-1').style.display = 'none';
+        document.getElementById('valuation-step-2').style.display = 'block';
+      }
+      
+      // Function to estimate home value
+      window.estimateHomeValue = function(event) {
+        event.preventDefault();
+        const form = event.target;
+        const value = Math.floor(150000 + Math.random() * 150000);
+        
+        document.getElementById('valuation-result').innerHTML = `
+          <div class="animate__animated animate__bounceIn">
+            <h3>I will send you an </h3>
+            <h3>EMAIL</h3>
+            <h3>with the valuation shortly!</h3>
+            <button onclick="document.getElementById('lead-form').scrollIntoView({behavior: 'smooth'})" class="contact-btn">Get in Touch</button>
+          </div>
+        `;
+        
+        document.getElementById('valuation-step-2').style.display = 'none';
+        document.getElementById('valuation-result').style.display = 'block';
+
+        const formData = new FormData(form);
+        formData.append('home_estimate', value);
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        });
+      }
+      
+      // Add subtle hover animations to listings
+      document.querySelectorAll('.listing').forEach(listing => {
+        listing.addEventListener('mouseenter', function() {
+          this.querySelector('.listing-details').style.transform = 'translateY(-10px)';
+        });
+        
+        listing.addEventListener('mouseleave', function() {
+          this.querySelector('.listing-details').style.transform = 'translateY(0)';
+        });
+      });
+      
+      // Add smooth scroll for all internal links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</link></head>
+<body>
+<header>
+<h1>Justin McGregor Realty</h1>
+</header>
+<section class="hero">
+<div class="hero-content">
+<h2>Your Dream Home Starts Here</h2>
+<p>Helping buyers and sellers in Mid-Michigan make moves with confidence.</p>
+</div>
+</section>
+<section class="valuation-section section">
+<h2>See What Your Home Is Worth In Seconds!</h2>
+<div class="valuation-content">
+<div id="valuation-step-1">
+<form onsubmit="showValuationForm(); return false;">
+<input name="address" placeholder="Your Property Address" required="" type="text"/>
+<input name="access_key" type="hidden" value="45966795-6df3-4ce8-a2d8-343f8d799c0e"/>
+<button type="submit">Next</button>
+</form>
+</div>
+<div id="valuation-step-2" style="display:none">
+<form onsubmit="estimateHomeValue(event)">
+<input name="access_key" type="hidden" value="45966795-6df3-4ce8-a2d8-343f8d799c0e"/>
+<input name="address" type="hidden"/>
+<input name="fullname" placeholder="First and Last Name" required="" type="text"/>
+<input name="phone" placeholder="Phone Number" required="" type="tel"/>
+<input name="email" placeholder="Email" required="" type="email"/>
+<select name="timeline" required="">
+<option value="">When are you looking to buy?</option>
+<option value="immediately">Immediately</option>
+<option value="1-3">1-3 months</option>
+<option value="3-6">3-6 months</option>
+<option value="6+">6+ months</option>
+</select>
+<select name="preapproved" required="">
+<option value="">Are you pre-approved?</option>
+<option value="yes">Yes</option>
+<option value="no">No</option>
+</select>
+<button type="submit">See My Home's Value</button>
+</form>
+</div>
+<div id="valuation-result" style="display:none; padding: 1rem; text-align: center; color: white;">
+</div>
+</div>
+</section>
+<section class="section">
+<h2>The Real Challenges You Face</h2>
+<div class="features">
+<div class="feature">
+<strong>Feeling Lost Without an Expert?</strong>
+<p>Without local knowledge, homes sit on the market and buyers miss out on deals.</p>
+</div>
+<div class="feature">
+<strong>Confused About Pricing?</strong>
+<p>Set the wrong price and your home might not sell—or you'll leave money on the table.</p>
+</div>
+<div class="feature">
+<strong>Overwhelmed by Inspections and Financing?</strong>
+<p>From appraisals to loans, I guide you through it all—stress-free.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>How I Make It Easy</h2>
+<div class="features">
+<div class="feature">
+<h3>Expert Guidance</h3>
+<p>I simplify every step—from home prep to closing—so you never feel lost.</p>
+</div>
+<div class="feature">
+<h3>Market Insights</h3>
+<p>Weekly updates and custom reports keep you ahead of local trends.</p>
+</div>
+<div class="feature">
+<h3>Strong Representation</h3>
+<p>I negotiate hard so you walk away with the best possible outcome.</p>
+</div>
+</div>
+</section>
+<section class="section">
+<h2><em>🔥 Hot Listings 🔥</em></h2>
+<div class="hot-listings">
+<div class="listing">
+<div class="listing-container">
+<img src="saginaw.jpg"/>
+</div>
+<div class="listing-details">
+<h3>4199 W Island DR, Saginaw,</h3>
+<p>34 Bed, 3 Bath — $380,000</p>
+
+<a href="https://s.paragonrels.com/goto/KxbO23PTN6U" target="_blank">
+<button class="contact-btn" style="margin-top: 1rem;">View Details</button>
+</a>
+</div>
+</div>
+<div class="listing">
+<div class="listing-container">
+<img src="midland.jpg"/>
+</div>
+<div class="listing-details">
+<h3>202 Graham St, Midland,</h3>
+<p>5 Bed, 2 Bath — $330,000</p>
+
+<a href="https://s.paragonrels.com/goto/Lk-PsBA8Pzg" target="_blank">
+<button class="contact-btn" style="margin-top: 1rem;">View Details</button>
+</a>
+</div>
+</div>
+<div class="listing">
+<div class="listing-container">
+<img src="bay.jpg"/>
+</div>
+<div class="listing-details">
+<h3>2169 S Ryan CT, Bay City</h3>
+<p>3 Bed, 2 Bath — $349,900</p>
+
+<a href="https://s.paragonrels.com/goto/KoizWvb0eyL" target="_blank">
+<button class="contact-btn" style="margin-top: 1rem;">View Details</button>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="about-section section">
+<div class="about-container">
+<div class="about-image">
+<img alt="Justin McGregor - Real Estate Agent" src="https://scontent-ord5-3.xx.fbcdn.net/v/t39.30808-6/479979798_1659448131336835_7536656450781357384_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=6ee11a&amp;_nc_ohc=0rdNKJrxk6wQ7kNvwHYVWD0&amp;_nc_oc=AdkvPGwZXA-36uS4pbu2jgyxA3c9HZpmcRAZLoUwMC56830xy5ddEpVeWi97OEbwj3Y&amp;_nc_zt=23&amp;_nc_ht=scontent-ord5-3.xx&amp;_nc_gid=zhRLjpvT4wNXFuCIYSp9Qw&amp;oh=00_AfHOuuVYbIV9P7_EAXf-4BovE3IVfuIvx9q0b6SxuCc_EQ&amp;oe=6804B5FE"/>
+</div>
+<div class="about-content">
+<h2>About Me</h2>
+<p>After a decade in client-focused service roles, I've developed a true passion for understanding people's needs and exceeding their expectations. Real estate allows me to combine this passion with my love for helping people find their perfect place in our Mid-Michigan communities. When you work with me, you're working with someone who truly listens first and acts second.</p>
+<p>I believe buying or selling a home should be an exciting journey, not a stressful one. My clients appreciate my attentiveness to their unique situations - whether you're a first-time buyer feeling overwhelmed by the process, a family needing more space for growing children, or an empty-nester looking to downsize, I take the time to understand what matters most to you.</p>
+<p>My approach is simple: clear communication, genuine care, and relentless advocacy for your best interests. I'll be by your side through every negotiation, inspection, and paperwork session, making sure you're informed, comfortable, and getting the best possible outcome. Your success is my success, and I won't rest until you're completely satisfied with your real estate experience.</p>
+<div class="about-signature">— Justin McGregor</div>
+</div>
+</div>
+</section>
+<section class="section">
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+<div class="faq-item">
+<strong>Do I need to be pre-approved to start looking?</strong>
+<p>Pre-approval isn't required to begin, but it helps you shop smarter and move faster.</p>
+</div>
+<div class="faq-item">
+<strong>How much does it cost to list with you?</strong>
+<p>Nothing upfront. I only get paid when your home sells—no hidden fees.</p>
+</div>
+<div class="faq-item">
+<strong>Do you work with first-time buyers?</strong>
+<p>Absolutely! I walk you through every step, making your first purchase feel simple.</p>
+</div>
+</div>
+</section>
+<section class="section" id="lead-form">
+<h2><span class="gradient-text">Let's Begin Your Journey</span></h2>
+<p style="text-align: center; margin-bottom: 2.5rem; font-weight: 300; font-size: 1.1rem; max-width: 800px; margin-left: auto; margin-right: auto; color: #555; line-height: 1.8;">Ready to make your next move? Whether you're buying, selling, or just exploring options, I'm here to guide you every step of the way. Tell me what you need, and let's create a plan that works perfectly for you.</p>
+<form action="https://script.google.com/macros/s/AKfycbyasnJHsWjWlDlllQV2A4hLueyfpFbii2wFQodnDsga06igS9qpBYUMb8bACfrFNVXmtQ/exec" method="POST">
+<input name="access_key" type="hidden" value="45966795-6df3-4ce8-a2d8-343f8d799c0e"/>
+<input name="name" placeholder="Your Name" required="" type="text"/>
+<input name="email" placeholder="Your Email" required="" type="email"/>
+<select name="need">
+<option disabled="" selected="" value="">How Can I Help You?</option>
+<option value="buy">I'm looking to buy</option>
+<option value="sell">I'm looking to sell</option>
+<option value="browse">I'm exploring my options</option>
+</select>
+<textarea name="message" placeholder="Tell me more about what you're looking for..." required="" rows="4"></textarea>
+<button type="submit">Start the Conversation</button>
+</form>
+</section>
+<footer>
+<div style="position: relative; z-index: 1;">
+<p style="margin-bottom: 1rem;">
+   Justin McGregor <br/>
+(989) 295-2691 <br/>
+    jmcgregorrealty@yahoo.com <br/>
+   4177 Fashion Square Blvd Ste 3 <br/>
+   Saginaw, MI 48603</p></div>
+<img height="75" src="kw.png"/>
+
+</footer>
+</body>
+</html>
