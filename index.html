@@ -856,7 +856,34 @@
         font-size: 2.5rem;
       }
     }
-  </style>
+  
+/* Centered grid style for My Listings */
+.my-listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding: 2.5rem;
+}
+
+@media (min-width: 992px) {
+  .my-listings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.my-listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding: 2.5rem;
+}
+
+@media (min-width: 992px) {
+  .my-listings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Add an animation class to sections when they become visible
@@ -946,13 +973,25 @@
 <header>
 <h1>Justin McGregor Realty</h1>
 </header>
+
+<nav style="background: rgba(31,34,51,0.95); padding: 1rem; display: flex; justify-content: center; gap: 2rem; position: sticky; top: 0; z-index: 1000;">
+  <a href="#home-value" style="color: var(--light); text-decoration: none; font-weight: 600;">Home Value</a>
+  <a href="#challenges" style="color: var(--light); text-decoration: none; font-weight: 600;">Challenges</a>
+  <a href="#how-easy" style="color: var(--light); text-decoration: none; font-weight: 600;">How I Make It Easy</a>
+  <a href="#my-listings" style="color: var(--light); text-decoration: none; font-weight: 600;">My Listings</a>
+  <a href="#hot-listings" style="color: var(--light); text-decoration: none; font-weight: 600;">Hot Listings</a>
+  <a href="#about-me" style="color: var(--light); text-decoration: none; font-weight: 600;">About Me</a>
+  <a href="#lead-form" style="color: var(--light); text-decoration: none; font-weight: 600;">Contact</a>
+  <a href="blog.html" style="color: var(--light); text-decoration: none; font-weight: 600;">Blog</a>
+</nav>
+
 <section class="hero">
 <div class="hero-content">
 <h2>Your Dream Home Starts Here</h2>
 <p>Helping buyers and sellers in Mid-Michigan make moves with confidence.</p>
 </div>
 </section>
-<section class="valuation-section section">
+<section class="valuation-section section" id="home-value">
 <h2>See What Your Home Is Worth In Seconds!</h2>
 <div class="valuation-content">
 <div id="valuation-step-1">
@@ -988,7 +1027,7 @@
 </div>
 </div>
 </section>
-<section class="section">
+<section class="section" id="challenges">
 <h2>The Real Challenges You Face</h2>
 <div class="features">
 <div class="feature">
@@ -1005,7 +1044,7 @@
 </div>
 </div>
 </section>
-<section class="section">
+<section class="section" id="how-easy">
 <h2>How I Make It Easy</h2>
 <div class="features">
 <div class="feature">
@@ -1022,7 +1061,77 @@
 </div>
 </div>
 </section>
-<section class="section">
+
+<section class="section" id="my-listings">
+  <h2>My Listings</h2>
+  <div class="my-listings-grid">
+    <div class="listing">
+      <div class="listing-container">
+        <img src="https://cdnparap80.paragonrels.com/ParagonImages/Property/P8/MIMLS/50172544/0/640/480/be33939e4ffd2c2a5267f1cf91eef5de/7/790a1fa452c729e14201f9b9312f7d2f/50172544-490221d9-2116-4482-8843-271d83e2e572.JPG" alt="Listing 1" />
+      </div>
+      <div class="listing-details">
+        <h3>3196 Haberland Drive, Bay City</h3>
+        <p>3 Bed, 1.5 Bath — $215,000</p>
+        <a href="https://s.paragonrels.com/goto/LBqGRf__4h5" target="_blank" rel="noopener noreferrer"><button class="contact-btn" style="margin-top: 1rem;" >View Details</button></a>
+      </div>
+    </div>
+  
+  <!--
+    <div class="listing">
+      <div class="listing-container">
+        <img src="" alt="Listing 2" />
+      </div>
+      <div class="listing-details">
+        <h3>5678 Example Ave, Bay City</h3>
+        <p>4 Bed, 3 Bath — $310,000</p>
+        <a href="#"><button class="contact-btn" style="margin-top: 1rem;">View Details</button></a>
+      </div>
+    </div>
+  -->
+ 
+  <!--
+    <div class="listing">
+      <div class="listing-container">
+        <img src="" alt="Listing 2" />
+      </div>
+      <div class="listing-details">
+        <h3>5678 Example Ave, Bay City</h3>
+        <p>4 Bed, 3 Bath — $310,000</p>
+        <a href="#"><button class="contact-btn" style="margin-top: 1rem;">View Details</button></a>
+      </div>
+    </div>
+-->
+
+  <!--
+    <div class="listing">
+      <div class="listing-container">
+        <img src="listing2.jpg" alt="Listing 2" />
+      </div>
+      <div class="listing-details">
+        <h3>5678 Example Ave, Bay City</h3>
+        <p>4 Bed, 3 Bath — $310,000</p>
+        <a href="#"><button class="contact-btn" style="margin-top: 1rem;">View Details</button></a>
+      </div>
+    </div>
+  -->
+
+  <!--
+    <div class="listing">
+      <div class="listing-container">
+        <img src="listing2.jpg" alt="Listing 2" />
+      </div>
+      <div class="listing-details">
+        <h3>5678 Example Ave, Bay City</h3>
+        <p>4 Bed, 3 Bath — $310,000</p>
+        <a href="#"><button class="contact-btn" style="margin-top: 1rem;">View Details</button></a>
+      </div>
+    </div>
+  -->
+ 
+  </div>
+</section>
+
+<section class="section" id="hot-listings">
 <h2><em>🔥 Hot Listings 🔥</em></h2>
 <div class="hot-listings">
 <div class="listing">
@@ -1066,7 +1175,7 @@
 </div>
 </div>
 </section>
-<section class="about-section section">
+<section class="about-section section" id="about-me">
 <div class="about-container">
 <div class="about-image">
 <img alt="Justin McGregor - Real Estate Agent" src="https://scontent-ord5-3.xx.fbcdn.net/v/t39.30808-6/479979798_1659448131336835_7536656450781357384_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=6ee11a&amp;_nc_ohc=0rdNKJrxk6wQ7kNvwHYVWD0&amp;_nc_oc=AdkvPGwZXA-36uS4pbu2jgyxA3c9HZpmcRAZLoUwMC56830xy5ddEpVeWi97OEbwj3Y&amp;_nc_zt=23&amp;_nc_ht=scontent-ord5-3.xx&amp;_nc_gid=zhRLjpvT4wNXFuCIYSp9Qw&amp;oh=00_AfHOuuVYbIV9P7_EAXf-4BovE3IVfuIvx9q0b6SxuCc_EQ&amp;oe=6804B5FE"/>
