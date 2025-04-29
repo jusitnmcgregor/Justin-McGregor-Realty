@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Justin McGregor Realty - Blog Posts</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Montserrat:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+<style>
+    :root {
+      --primary: #c8553d;
+      --secondary: #553d67;
+      --accent: #d4af37;
+      --dark: #1f2233;
+      --light: #ffffff;
+      --light-gray: #f4f5f7;
+      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+      --accent-gradient: linear-gradient(135deg, var(--accent), #d9b962);
+      --font-primary: 'Playfair Display', serif;
+      --font-secondary: 'Montserrat', sans-serif;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: var(--font-secondary);
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+      font-weight: 300;
+      letter-spacing: 0.3px;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.82)), 
+                  url('https://images.unsplash.com/photo-1613545325278-f24b0cae1224') no-repeat center center/cover;
+      z-index: -1;
+      background-attachment: fixed;
+    }
+    
+    h1, h2, h3 {
+      font-family: var(--font-primary);
+      font-weight: 400;
+    }
+    
+    header {
+      background: rgba(31, 34, 51, 0.98);
+      color: var(--light);
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+                  rgba(200, 85, 61, 0.1) 0%, 
+                  rgba(85, 61, 103, 0.1) 50%, 
+                  rgba(212, 175, 55, 0.1) 100%);
+      z-index: -1;
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 5rem;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #fff 10%, var(--accent) 50%, #fff 90%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+      position: relative;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+      animation: shimmer 3s infinite;
+    }
+    
+    @keyframes shimmer {
+      0% {
+        background-position: -100% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+    
+    header h1::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(212, 175, 55, 0.5);
+    }
+    
+    header h1::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      z-index: -1;
+    }
+    
+    nav {
+      background: rgba(31, 34, 51, 0.95);
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      gap: 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 2px solid var(--accent);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    nav a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+      position: relative;
+    }
+    
+    nav a:hover {
+      color: var(--accent);
+      background: rgba(255,255,255,0.05);
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    nav a:hover::after {
+      width: 70%;
+    }
+    
+    .section {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(15px);
+      margin: 3rem auto;
+      max-width: 1200px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    }
+    
+    .section h2 {
+      color: var(--dark);
+      padding: 3rem 0 1.5rem;
+      position: relative;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+    
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+      box-shadow: 0 2px 5px rgba(212, 175, 55, 0.3);
+    }
+    
+    .blog-container {
+      padding: 2.5rem;
+    }
+    
+    .blog-post {
+      background: rgba(244, 245, 247, 0.7);
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border-left: 3px solid transparent;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      margin-bottom: 2.5rem;
+    }
+    
+    .blog-post::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--accent));
+      transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    .blog-post:hover {
+      transform: translateY(-5px) scale(1.01);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+    
+    .blog-post:hover::before {
+      width: 6px;
+    }
+    
+    .blog-post h3 {
+      color: var(--primary);
+      margin-bottom: 1.2rem;
+      font-size: 1.8rem;
+      position: relative;
+      display: inline-block;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+    
+    .blog-post h3::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 30px;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    .blog-post:hover h3::after {
+      width: 100%;
+    }
+    
+    .blog-post p {
+      font-weight: 300;
+      line-height: 1.8;
+      color: #555;
+      letter-spacing: 0.3px;
+      margin-bottom: 1.5rem;
+    }
+    
+    .blog-meta {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .blog-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    
+    .read-more {
+      background: var(--accent);
+      color: var(--dark);
+      font-weight: 500;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      text-decoration: none;
+    }
+    
+    .read-more::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.6s;
+    }
+    
+    .read-more:hover::after {
+      left: 100%;
+    }
+    
+    .read-more:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      background: var(--accent-gradient);
+    }
+    
+    .blog-featured-image {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease;
+    }
+    
+    .blog-post:hover .blog-featured-image {
+      transform: scale(1.02);
+    }
+    
+    footer {
+      background: rgba(31, 34, 51, 0.98);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 5rem;
+    }
+    
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+                rgba(200, 85, 61, 0.1) 0%, 
+                rgba(85, 61, 103, 0.1) 50%, 
+                rgba(212, 175, 55, 0.1) 100%);
+      z-index: 0;
+    }
+    
+    footer div {
+      position: relative;
+      z-index: 1;
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 50%, var(--dark) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 5s infinite;
+      display: inline-block;
+    }
+    
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translate3d(0, -40px, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 40px, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    
+    .animate__animated {
+      animation-duration: 1s;
+    }
+    
+    .animate__fadeInUp {
+      animation-name: fadeInUp;
+    }
+    
+    .blog-hero {
+      background: linear-gradient(rgba(31,34,51,0.6), rgba(31,34,51,0.6)), 
+                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa') no-repeat center center/cover;
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      padding: 4rem 2rem;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+    }
+    
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top right, rgba(200, 85, 61, 0.2), transparent 50%),
+                  radial-gradient(circle at bottom left, rgba(85, 61, 103, 0.2), transparent 50%);
+      z-index: 0;
+    }
+    
+    .blog-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+    
+    .blog-hero h2 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      animation: fadeInDown 1s ease-out;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    
+    .blog-hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease-out 0.5s;
+      animation-fill-mode: both;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+    
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 3rem;
+    }
+    
+    .pagination a {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 5px;
+      text-decoration: none;
+      color: var(--dark);
+      transition: all 0.3s ease;
+      border: 1px solid var(--light-gray);
+    }
+    
+    .pagination a:hover,
+    .pagination a.active {
+      background: var(--accent);
+      color: var(--dark);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    /* New styles for full blog posts */
+    .full-post-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem;
+    }
+    
+    .blog-content {
+      margin-top: 2rem;
+    }
+    
+    .blog-content h4 {
+      font-family: var(--font-primary);
+      color: var(--secondary);
+      margin: 2rem 0 1rem;
+      font-size: 1.5rem;
+    }
+    
+    .blog-content ul, .blog-content ol {
+      margin-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .blog-content li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .blog-content blockquote {
+      border-left: 3px solid var(--accent);
+      padding-left: 1.5rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: #666;
+    }
+    
+    .blog-author {
+      display: flex;
+      align-items: center;
+      margin: 2.5rem 0;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .author-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 1.5rem;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+    }
+    
+    .author-info h4 {
+      font-family: var(--font-primary);
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+    
+    .author-info p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+    
+    .blog-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 2rem 0;
+    }
+    
+    .blog-tag {
+      background: rgba(200, 85, 61, 0.1);
+      color: var(--primary);
+      font-size: 0.8rem;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+    
+    .blog-tag:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .related-posts {
+      margin-top: 4rem;
+    }
+    
+    .related-posts h3 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--dark);
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .related-posts h3::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+    }
+    
+    .related-posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .related-post-card {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .related-post-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .related-post-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .related-post-content {
+      padding: 1.5rem;
+    }
+    
+    .related-post-content h4 {
+      font-family: var(--font-primary);
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+    }
+    
+    .related-post-meta {
+      font-size: 0.8rem;
+      color: #888;
+      margin-bottom: 0.8rem;
+    }
+    
+    .back-to-blog {
+      display: inline-block;
+      margin-bottom: 2rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .back-to-blog:hover {
+      color: var(--secondary);
+      transform: translateX(-5px);
+    }
+
+    
+    .social-button {
+      background: var(--light-gray);
+      color: var(--dark);
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .social-button:hover {
+      background: var(--accent);
+      color: var(--dark);
+      transform: translateY(-2px);
+    }
+    
+    .comment-form {
+      margin: 3rem 0;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .comment-form h3 {
+      margin-bottom: 1.5rem;
+      color: var(--dark);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+      font-weight: 500;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: var(--font-secondary);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 5px rgba(200, 85, 61, 0.3);
+    }
+    
+    .form-submit {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .form-submit:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .blog-navigation {
+      display: flex;
+      justify-content: space-between;
+      margin: 3rem 0;
+    }
+    
+    .nav-previous,
+    .nav-next {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--dark);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .nav-previous:hover,
+    .nav-next:hover {
+      color: var(--primary);
+    }
+    
+    .nav-previous:hover {
+      transform: translateX(-5px);
+    }
+    
+    .nav-next:hover {
+      transform: translateX(5px);
+    }
+    
+    /* Table of Contents */
+    .table-of-contents {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+    
+    .table-of-contents h4 {
+      margin-bottom: 1rem;
+      color: var(--dark);
+      font-family: var(--font-primary);
+    }
+    
+    .table-of-contents ul {
+      list-style-type: none;
+      margin-left: 1rem;
+    }
+    
+    .table-of-contents li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .table-of-contents a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .table-of-contents a:hover {
+      color: var(--secondary);
+      transform: translateX(5px);
+      display: inline-block;
+    }
+    
+    @media (max-width: 992px) {
+      header h1 {
+        font-size: 3.5rem;
+      }
+      
+      .blog-hero h2 {
+        font-size: 2.5rem;
+      }
+      
+      .related-posts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .blog-author {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .author-image {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+      
+      .blog-navigation {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      .blog-hero h2 {
+        font-size: 2rem;
+      }
+      
+      .full-post-container {
+        padding: 1.5rem;
+      }
+      
+      .blog-post h3 {
+        font-size: 1.5rem;
+      }
+      
+      .related-posts-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add an animation class to sections when they become visible
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+            entry.target.style.opacity = 1;
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      document.querySelectorAll('.section').forEach(section => {
+        section.style.opacity = 0;
+        observer.observe(section);
+      });
+      
+      // Add smooth scroll for all internal links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</link></head>
+<body>
+<header>
+<h1>Justin McGregor Realty</h1>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="index.html#lead-form">Contact</a>
+  <a href="index.html#about-me">About</a>
+</nav>
+
+<section class="blog-hero">
+  <div class="blog-hero-content">
+    <h2>Real Estate Insights</h2>
+    <p>Expert guidance, market trends, and helpful tips for buyers and sellers in Mid-Michigan.</p>
+  </div>
+</section>
+
+<!-- Full Blog Post -->
+<section class="section" id="blog-post-1">
+  <div class="full-post-container">
+    <!-- <a href="blog.html" class="back-to-blog">← Back to All Articles</a> -->
+    
+    <div class="blog-meta">
+      <span>April 15, 2025</span>
+      <span>|</span>
+      <span>Selling Tips</span>
+    </div>
+    
+    <h3>Top Tips for Selling Your Home Fast</h3>
+    
+    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa" alt="Home Staging" class="blog-featured-image" />
+
+    
+    <div class="blog-content">
+      <p>First impressions matter more than you might think. When potential buyers walk through your front door, they're making split-second judgments about your home. That's why proper staging is crucial for maximizing your property's appeal and selling price.</p>
+      
+      <p>From decluttering and depersonalizing to making strategic upgrades and pricing competitively, there are proven strategies that can help your home stand out in today's market. Learn the secrets to preparing your property for a quick and profitable sale.</p>
+      
+      <h4 id="section-1">First Impressions Matter</h4>
+      <p>The moment a potential buyer pulls up to your home, they begin forming opinions that will influence their entire viewing experience. This concept, often called "curb appeal," can make or break a sale before the buyer even steps inside.</p>
+      
+      <p>To maximize your home's curb appeal:</p>
+      <ul>
+        <li>Keep your lawn freshly mowed and garden beds well-maintained</li>
+        <li>Add colorful flowers near the entrance for a welcoming touch</li>
+        <li>Ensure your front door is in excellent condition - consider a fresh coat of paint</li>
+        <li>Power wash siding, walkways, and driveways</li>
+        <li>Update or clean outdoor light fixtures</li>
+      </ul>
+      
+      <p>Inside your home, focus on creating a clean, bright, and spacious environment. Remove excess furniture to make rooms appear larger. Deep clean every corner, paying special attention to kitchens and bathrooms. Consider a fresh coat of neutral paint to create a blank canvas that allows buyers to envision themselves in the space.</p>
+      
+      <blockquote>
+        "Homes that are properly staged sell for an average of 6-10% more than unstaged homes and typically sell 73% faster."
+      </blockquote>
+      
+      <h4 id="section-2">Smart Pricing Strategies</h4>
+      <p>Pricing your home correctly from the start is one of the most important factors in achieving a quick sale. Overpricing can lead to a property sitting on the market for too long, which often results in eventual price reductions and a lower final selling price than you might have received with the right initial pricing.</p>
+      
+      <p>Work with your real estate agent to analyze comparable sales in your neighborhood from the past 3-6 months. Pay attention to homes with similar square footage, bedrooms, bathrooms, and features to yours. Be honest about your home's condition compared to these properties.</p>
+      
+      <p>Consider having a pre-listing appraisal done to get an objective opinion of your home's value. While this will cost a few hundred dollars, it can provide valuable insight and help you price your home competitively.</p>
+      
+      <h4 id="section-3">Professional Photography Pays Off</h4>
+      <p>In today's digital-first home buying environment, the quality of your listing photos can dramatically impact how quickly your home sells. Professional real estate photographers know exactly how to capture your home's best angles and features using proper lighting and wide-angle lenses.</p>
+      
+      <p>Statistics show that listings with professional photography receive 61% more views online and can sell for up to $11,000 more than homes with amateur photos. This makes professional photography one of the best investments you can make when selling your home.</p>
+      
+      <p>Beyond still photography, consider adding a virtual tour to your listing. This immersive experience allows potential buyers to walk through your home digitally, helping them determine if it's worth scheduling an in-person viewing.</p>
+      
+      <h4 id="section-4">Timing Your Sale</h4>
+      <p>While you can successfully sell a home at any time of year, understanding seasonal trends in the Mid-Michigan market can help you maximize your selling potential.</p>
+      
+      <p>Traditionally, spring and early summer (April through June) represent the peak selling season in our region. Families often prefer to move during summer months to avoid disrupting the school year, and homes simply show better with green lawns and blooming gardens.</p>
+      
+      <p>However, selling during the "off-season" can have advantages too. With fewer competing listings in fall and winter, your home may receive more focused attention from serious buyers. Plus, buyers looking during these seasons are often more motivated by necessity rather than preference.</p>
+      
+      <h4 id="section-5">Working with the Right Agent</h4>
+      <p>Choosing the right real estate agent can significantly impact your selling experience and results. Look for an agent with specific experience in your neighborhood who can demonstrate a track record of successful sales similar to your property type.</p>
+      
+      <p>Your agent should provide:</p>
+      <ul>
+        <li>A comprehensive marketing plan tailored to your specific property</li>
+        <li>Regular communication and feedback from showings</li>
+        <li>Negotiation expertise to help you evaluate and respond to offers</li>
+        <li>Guidance through the inspection and closing process</li>
+      </ul>
+      
+      <p>Interview multiple agents before making your decision, and don't be afraid to ask for references from recent clients. The right partnership will make the entire selling process smoother and more profitable.</p>
+    </div>
+    
+    <div class="blog-tags">
+      <span class="blog-tag">Home Selling</span>
+      <span class="blog-tag">Staging</span>
+      <span class="blog-tag">Pricing Strategy</span>
+      <span class="blog-tag">Real Estate Photography</span>
+      <span class="blog-tag">Mid-Michigan</span>
+    </div>
+
+    
+    <div class="blog-author">
+      <img src="brownHS.jpg" alt="Justin McGregor" class="author-image" />
+      <div class="author-info">
+        <h4>Justin McGregor</h4>
+        <p>As a dedicated realtor serving Saginaw, Bay City, and Midland, I combine market expertise and a client-first approach to deliver exceptional, trustworthy results.</p>
+      </div>
+    </div>
+
+    
+  </div>
+</section>
+
+<!-- Second Blog Post -->
+<section class="section" id="blog-post-2">
+  <div class="full-post-container">
+    <!-- <a href="blog.html" class="back-to-blog">← Back to All Articles</a> -->
+    
+    <div class="blog-meta">
+      <span>April 8, 2025</span>
+      <span>|</span>
+      <span>Buying Guide</span>
+    </div>
+    
+    <h3>How to Buy Your First Home with Confidence</h3>
+    
+    <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716" alt="First-time Homebuyer" class="blog-featured-image" />
+    
+    
+    <div class="blog-content">
+      <p>The journey to homeownership is exciting, but it can also feel overwhelming if you're unprepared. From securing financing and understanding your budget to identifying your non-negotiables and navigating inspections, there's a lot to consider.</p>
+      
+      <p>This comprehensive guide walks you through each step of the home buying process, helping you avoid common pitfalls and make decisions you'll be happy with for years to come. Learn how to navigate the market with confidence and find a home that truly meets your needs.</p>
+      
+      <h4 id="section-6">Understanding Your Budget</h4>
+      <p>Before you start browsing listings, it's crucial to have a clear understanding of what you can realistically afford. Many first-time buyers make the mistake of looking at homes beyond their budget, which can lead to disappointment or, worse, financial strain after purchase.</p>
+      
+      <p>Start by calculating your debt-to-income ratio (DTI). Lenders typically prefer your housing costs to be no more than 28% of your gross monthly income, with total debt payments (including housing, car loans, student loans, etc.) not exceeding 36%.</p>
+      
+      <p>Remember to account for all homeownership costs beyond just the mortgage payment:</p>
+      <ul>
+        <li>Property taxes (which can vary significantly by location)</li>
+        <li>Homeowners insurance</li>
+        <li>Possible mortgage insurance (required with down payments less than 20%)</li>
+        <li>Utilities (often higher than in rentals)</li>
+        <li>Maintenance and repairs (budget 1-2% of home value annually)</li>
+        <li>HOA fees (if applicable)</li>
+      </ul>
+      
+      <blockquote>
+        "The largest financial mistake many first-time homebuyers make is purchasing at the top of their budget without leaving room for life's inevitable surprises."
+      </blockquote>
+      
+      <h4 id="section-7">Getting Pre-Approved</h4>
+      <p>A mortgage pre-approval is essential before beginning your home search in earnest. This process involves a lender reviewing your financial information to determine how much they're willing to lend you.</p>
+      
+      <p>Pre-approval provides several benefits:</p>
+      <ul>
+        <li>It shows sellers you're a serious buyer with verified financing</li>
+        <li>It gives you a clear price range for your home search</li>
+        <li>It can speed up the closing process once you find a home</li>
+        <li>It may give you an edge in competitive bidding situations</li>
+      </ul>
+      
+      <p>Shop around with at least three different lenders to compare interest rates and terms. Even a small difference in your rate can save you thousands over the life of your loan. Also consider various loan types, including conventional, FHA, VA, and USDA options, depending on your eligibility.</p>
+      
+      <h4 id="section-8">Creating Your Must-Have List</h4>
+      <p>One of the most effective ways to streamline your home search is to create a clear list of must-haves, nice-to-haves, and deal-breakers. This helps you focus your search and avoid becoming overwhelmed by options.</p>
+      
+      <p>Consider these aspects when creating your list:</p>
+      <ul>
+        <li>Location: School district, commute time, proximity to amenities</li>
+        <li>Size: Minimum square footage, number of bedrooms and bathrooms</li>
+        <li>Property type: Single-family, condo, townhouse</li>
+        <li>Features: Garage, yard size, layout preferences</li>
+        <li>Age and condition: New construction vs. fixer-upper</li>
+        <li>Future needs: Room for family growth, aging in place considerations</li>
+      </ul>
+      
+      <p>Be realistic about what's available in your price range and location. You may need to compromise on some factors, which is why prioritizing your list is so important.</p>
+      
+      <h4 id="section-9">Working with a Buyer's Agent</h4>
+      <p>As a first-time homebuyer, having a dedicated buyer's agent on your side can be invaluable. While you can certainly browse homes online independently, an experienced agent brings several advantages to the table:</p>
+      
+      <ul>
+        <li>Access to exclusive listings and coming-soon properties</li>
+        <li>Neighborhood expertise and insider knowledge</li>
+        <li>Negotiation skills to help you get the best price and terms</li>
+        <li>Guidance through paperwork and contractual obligations</li>
+        <li>Referrals to trusted inspectors, lenders, and other professionals</li>
+      </ul>
+      
+      <p>Best of all, as a buyer, you typically don't pay your agent's commission directly—it's usually covered by the seller as part of the transaction. This makes professional representation essentially free to you as a buyer.</p>
+      
+      <h4 id="section-10">The Importance of Home Inspections</h4>
+      <p>Once you've found a home and had your offer accepted, the inspection period is your opportunity to discover any hidden issues before finalizing the purchase. Never skip this critical step, even with new construction.</p>
+      
+      <p>A standard home inspection covers the property's major systems and components, including:</p>
+      <ul>
+        <li>Foundation and structural elements</li>
+        <li>Roof and exterior</li>
+        <li>Electrical and plumbing systems</li>
+        <li>HVAC systems</li>
+        <li>Appliances</li>
+        <li>Windows and doors</li>
+      </ul>
+      
+      <p>Depending on the property, you might also consider additional specialized inspections for:</p>
+      <ul>
+        <li>Radon</li>
+        <li>Mold</li>
+        <li>Lead paint (especially in homes built before 1978)</li>
+        <li>Septic system</li>
+        <li>Well water quality</li>
+      </ul>
+      
+      <p>Use inspection findings to negotiate repairs or price adjustments with the seller, or to make an informed decision about whether to proceed with the purchase.</p>
+    </div>
+    
+    <div class="blog-tags">
+      <span class="blog-tag">First-Time Buyer</span>
+      <span class="blog-tag">Mortgage</span>
+      <span class="blog-tag">Home Inspection</span>
+      <span class="blog-tag">Buyer's Agent</span>
+      <span class="blog-tag">Budget Planning</span>
+    </div>
+    
+    
+    <div class="blog-author">
+      <img src="brownHS.jpg" alt="Justin McGregor" class="author-image" />
+      <div class="author-info">
+        <h4>Justin McGregor</h4>
+        <p>As a dedicated realtor serving Saginaw, Bay City, and Midland, I combine market expertise and a client-first approach to deliver exceptional, trustworthy results.</p>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Third Blog Post -->
+<section class="section" id="blog-post-3">
+  <div class="full-post-container">
+    
+    <div class="blog-meta">
+      <span>April 1, 2025</span>
+      <span>|</span>
+      <span>Market Analysis</span>
+    </div>
+    
+    <h3>Market Trends in Mid-Michigan You Should Know</h3>
+    
+    <img src="https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c" alt="Mid-Michigan Real Estate" class="blog-featured-image" />
+    
+    
+    <div class="blog-content">
+      <p>The Mid-Michigan real estate market continues to evolve, with unique dynamics affecting Saginaw, Bay City, and Midland counties. Understanding these trends is essential whether you're planning to buy, sell, or invest in the region.</p>
+      
+      <p>This analysis breaks down current inventory levels, pricing trajectories, and neighborhood-specific insights that can inform your real estate decisions. Discover which areas are seeing the most growth, where buyers can find the best value, and what sellers should expect in the coming months.</p>
+      
+      <h4 id="section-11">Current Market Overview</h4>
+      <p>Mid-Michigan's real estate landscape in early 2025 presents a more balanced market than we've seen in recent years. After the extreme seller's market conditions of 2021-2023, we're now experiencing a gradual normalization with several key indicators worth noting:</p>
+      
+      <ul>
+        <li>Inventory levels have increased approximately 18% year-over-year</li>
+        <li>Average days on market now stands at 34 days, up from 21 days in 2024</li>
+        <li>Median home prices have stabilized with modest 3-4% annual appreciation</li>
+        <li>Mortgage rates have settled in the 5.5-6% range after previous volatility</li>
+      </ul>
+      
+      <p>This shift provides breathing room for buyers who now have more options and less pressure to make immediate decisions. For sellers, it means proper pricing and presentation are increasingly important to stand out in a less frantic marketplace.</p>
+      
+      <blockquote>
+        "The Mid-Michigan market is finally finding its equilibrium after years of extremes. This creates opportunities for both buyers and sellers who understand the new dynamics."
+      </blockquote>
+      
+      <h4 id="section-12">Saginaw County Spotlight</h4>
+      <p>Saginaw County continues to offer some of the region's most affordable housing options, with particular strength in the first-time buyer and mid-range segments. The median home price currently stands at $165,000, representing a 3.2% increase from last year.</p>
+      
+      <p>Neighborhood trends worth noting:</p>
+      <ul>
+        <li><strong>Heritage Square and Hazelwood neighborhoods</strong> have seen particularly strong demand, with homes often selling within 10-15 days when priced appropriately</li>
+        <li><strong>Township areas</strong> continue to attract families looking for newer construction with more square footage</li>
+        <li><strong>Historic districts</strong> are seeing renewed interest from buyers looking to restore character homes, especially among remote workers seeking more space</li>
+      </ul>
+      
+      <p>New commercial development in the Saginaw Township area is creating a positive ripple effect for residential properties within a 3-mile radius, with these homes seeing above-average appreciation of 5-6% annually.</p>
+      
+      <h4 id="section-13">Bay City Developments</h4>
+      <p>Bay City's waterfront continues to drive its real estate narrative, with riverfront and bay-adjacent properties commanding premium prices and selling quickly despite the overall market moderation.</p>
+      
+      <p>The median home price in Bay City now stands at $178,500, up 4.1% from last year. Key market patterns include:</p>
+      
+      <ul>
+        <li>The ongoing redevelopment of downtown areas has created strong demand for condos and townhomes among both young professionals and empty nesters</li>
+        <li>Investors are increasingly active in multi-family properties, particularly in areas within walking distance to downtown amenities</li>
+        <li>The east side neighborhoods are seeing steady price appreciation as buyers seek value alternatives to pricier west side locations</li>
+      </ul>
+      
+      <p>Bay City's market is particularly sensitive to seasonal fluctuations, with waterfront properties seeing their peak demand in spring and summer months. This creates strategic timing opportunities for both buyers and sellers.</p>
+      
+      <h4 id="section-14">Midland: Steady Growth</h4>
+      <p>Midland continues to benefit from its stable employment base and quality school system, maintaining the highest median home prices in the tri-county area at $215,000. This represents a modest 2.8% increase year-over-year.</p>
+      
+      <p>Several trends distinguish the Midland market:</p>
+      <ul>
+        <li>The luxury segment ($400,000+) has seen increased activity compared to last year, with particular demand for properties in the 3,000+ square foot range</li>
+        <li>New construction remains active in the northern sections of the county, though at a more measured pace than previous years</li>
+        <li>Homes with modern updates are commanding significant premiums over properties requiring renovation</li>
+      </ul>
+      
+      <p>Midland's proximity to employers like Dow and quality healthcare facilities continues to attract relocating professionals, keeping its market relatively insulated from broader regional fluctuations.</p>
+      
+      <h4 id="section-15">Predictions for the Coming Year</h4>
+      <p>Looking ahead to the remainder of 2025 and early 2026, several factors are likely to shape the Mid-Michigan real estate landscape:</p>
+      
+      <ul>
+        <li><strong>Mortgage rates</strong> are projected to remain relatively stable, with potential modest decreases by year-end if inflation continues to moderate</li>
+        <li><strong>Inventory levels</strong> will likely continue their gradual increase, further balancing the market</li>
+        <li><strong>Price appreciation</strong> should remain in the 3-5% range, with higher growth in select high-demand neighborhoods</li>
+        <li><strong>New construction</strong> will focus increasingly on mid-range housing to address persistent demand in the $200,000-$300,000 segment</li>
+      </ul>
+      
+      <p>The ongoing infrastructure improvements throughout the region, including the completion of several road projects and downtown revitalizations, will continue to influence property values in adjacent areas.</p>
+      
+      <p>For buyers, the coming months represent an opportunity to enter the market with more options and negotiating leverage than we've seen in recent years. For sellers, understanding precise neighborhood trends and proper pricing will be more critical than ever to achieve optimal results.</p>
+    </div>
+    
+    <div class="blog-tags">
+      <span class="blog-tag">Market Analysis</span>
+      <span class="blog-tag">Mid-Michigan</span>
+      <span class="blog-tag">Saginaw</span>
+      <span class="blog-tag">Bay City</span>
+      <span class="blog-tag">Midland</span>
+    </div>
+    
+    
+    <div class="blog-author">
+      <img src="brownHS.jpg" alt="Justin McGregor" class="author-image" />
+      <div class="author-info">
+        <h4>Justin McGregor</h4>
+        <p>As a dedicated realtor serving Saginaw, Bay City, and Midland, I combine market expertise and a client-first approach to deliver exceptional, trustworthy results.</p>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+<footer>
+  <div>
+    <p style="margin-bottom: 1rem;">
+      Justin McGregor <br/>
+      (989) 295-2691 <br/>
+      jmcgregorrealty@yahoo.com <br/>
+      4177 Fashion Square Blvd Ste 3 <br/>
+      Saginaw, MI 48603
+    </p>
+  </div>
+  <img height="75" src="kw.png"/>
+</footer>
+
+<!-- Blog Index Page - Can be linked as blog.html -->
+<div style="display: none;" id="blog-index-page">
+  <section class="blog-hero">
+    <div class="blog-hero-content">
+      <h2>Real Estate Insights</h2>
+      <p>Expert guidance, market trends, and helpful tips for buyers and sellers in Mid-Michigan.</p>
+    </div>
+  </section>
+  
+  <section class="section" id="blog-index-content">
+    <h2>Latest Articles</h2>
+    <div class="blog-container">
+      <div class="blog-post">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa" alt="Home Staging" class="blog-featured-image" />
+        <div class="blog-meta">
+          <span>April 15, 2025</span>
+          <span>|</span>
+          <span>Selling Tips</span>
+        </div>
+        <h3>Top Tips for Selling Your Home Fast</h3>
+        <p>First impressions matter more than you might think. When potential buyers walk through your front door, they're making split-second judgments about your home. That's why proper staging is crucial for maximizing your property's appeal and selling price.</p>
+        <p>From decluttering and depersonalizing to making strategic upgrades and pricing competitively, there are proven strategies that can help your home stand out in today's market. Learn the secrets to preparing your property for a quick and profitable sale.</p>
+        <a href="blog-post-1.html" class="read-more">Read Full Article</a>
+      </div>
+      
+      <div class="blog-post">
+        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716" alt="First-time Homebuyer" class="blog-featured-image" />
+        <div class="blog-meta">
+          <span>April 8, 2025</span>
+          <span>|</span>
+          <span>Buying Guide</span>
+        </div>
+        <h3>How to Buy Your First Home with Confidence</h3>
+        <p>The journey to homeownership is exciting, but it can also feel overwhelming if you're unprepared. From securing financing and understanding your budget to identifying your non-negotiables and navigating inspections, there's a lot to consider.</p>
+        <p>This comprehensive guide walks you through each step of the home buying process, helping you avoid common pitfalls and make decisions you'll be happy with for years to come. Learn how to navigate the market with confidence and find a home that truly meets your needs.</p>
+        <a href="blog-post-2.html" class="read-more">Read Full Article</a>
+      </div>
+      
+      <div class="blog-post">
+        <img src="https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c" alt="Mid-Michigan Real Estate" class="blog-featured-image" />
+        <div class="blog-meta">
+          <span>April 1, 2025</span>
+          <span>|</span>
+          <span>Market Analysis</span>
+        </div>
+        <h3>Market Trends in Mid-Michigan You Should Know</h3>
+        <p>The Mid-Michigan real estate market continues to evolve, with unique dynamics affecting Saginaw, Bay City, and Midland counties. Understanding these trends is essential whether you're planning to buy, sell, or invest in the region.</p>
+        <p>This analysis breaks down current inventory levels, pricing trajectories, and neighborhood-specific insights that can inform your real estate decisions. Discover which areas are seeing the most growth, where buyers can find the best value, and what sellers should expect in the coming months.</p>
+        <a href="blog-post-3.html" class="read-more">Read Full Article</a>
+      </div>
+      
+      <div class="blog-post">
+        <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a" alt="Home Renovation" class="blog-featured-image" />
+        <div class="blog-meta">
+          <span>March 25, 2025</span>
+          <span>|</span>
+          <span>Home Improvement</span>
+        </div>
+        <h3>Renovations That Actually Pay Off When Selling</h3>
+        <p>Not all home improvements offer the same return on investment when it comes time to sell. Before you pour thousands into a kitchen remodel or basement finishing project, it's important to understand which upgrades truly add value in today's market.</p>
+        <p>This guide examines the data behind renovation ROI in Mid-Michigan, highlighting which projects consistently deliver the biggest bang for your buck. From quick weekend updates to major renovations, learn where to focus your efforts for maximum impact on your home's value.</p>
+        <a href="blog-post-4.html" class="read-more">Read Full Article</a>
+      </div>
+      
+      <div class="blog-post">
+        <img src="https://images.unsplash.com/photo-1516156008625-3a9d6067fab5" alt="Mortgage Documents" class="blog-featured-image" />
+        <div class="blog-meta">
+          <span>March 18, 2025</span>
+          <span>|</span>
+          <span>Financing</span>
+        </div>
+        <h3>Understanding Mortgage Options in 2025</h3>
+        <p>With the evolving lending landscape, staying informed about your mortgage options is more important than ever. Today's borrowers have more choices than just the traditional 30-year fixed mortgage, and the right selection can save you thousands over the life of your loan.</p>
+        <p>This article explores conventional, FHA, VA, and specialized mortgage products available to Mid-Michigan homebuyers, breaking down the pros and cons of each. Learn about current rate trends, down payment requirements, and which options might best suit your financial situation.</p>
+        <a href="blog-post-5.html" class="read-more">Read Full Article</a>
+      </div>
+      
+      <div class="blog-post">
+        <img src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7" alt="Neighborhood" class="blog-featured-image" />
+        <div class="blog-meta">
+          <span>March 10, 2025</span>
+          <span>|</span>
+          <span>Local Insights</span>
+        </div>
+        <h3>Emerging Neighborhoods in Mid-Michigan</h3>
+        <p>While established neighborhoods will always have their appeal, savvy homebuyers and investors are increasingly turning their attention to emerging areas throughout the tri-county region. These up-and-coming neighborhoods often offer compelling value along with promising appreciation potential.</p>
+        <p>From revitalized historic districts to growing suburban communities, this guide highlights areas experiencing positive transformation. Discover which neighborhoods are benefiting from new development, improved amenities, and growing demand before prices fully reflect these positive changes.</p>
+        <a href="blog-post-6.html" class="read-more">Read Full Article</a>
+      </div>
+    </div>
+    
+    <div class="pagination">
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">Next →</a>
+    </div>
+  </section>
+</div>
+
+<!-- Fourth Blog Post (as a template for future posts) -->
+<div style="display: none;" id="blog-post-template">
+  <section class="section" id="blog-post-new">
+    <div class="full-post-container">
+      
+      <div class="blog-meta">
+        <span>[Date]</span>
+        <span>|</span>
+        <span>[Category]</span>
+      </div>
+      
+      <h3>[Blog Post Title]</h3>
+      
+      <img src="[Image URL]" alt="[Image Alt Text]" class="blog-featured-image" />
+      
+      
+      <div class="blog-content">
+        <p>[Introduction paragraph 1]</p>
+        
+        <p>[Introduction paragraph 2]</p>
+        
+        <h4 id="section-new-1">[Section 1 Title]</h4>
+        <p>[Section 1 content]</p>
+        
+        <ul>
+          <li>[List item 1]</li>
+          <li>[List item 2]</li>
+          <li>[List item 3]</li>
+        </ul>
+        
+        <blockquote>
+          "[Quote text]"
+        </blockquote>
+        
+        <h4 id="section-new-2">[Section 2 Title]</h4>
+        <p>[Section 2 content]</p>
+        
+        <h4 id="section-new-3">[Section 3 Title]</h4>
+        <p>[Section 3 content]</p>
+        
+        <h4 id="section-new-4">[Section 4 Title]</h4>
+        <p>[Section 4 content]</p>
+        
+        <h4 id="section-new-5">[Section 5 Title]</h4>
+        <p>[Section 5 content]</p>
+      </div>
+      
+      <div class="blog-tags">
+        <span class="blog-tag">[Tag 1]</span>
+        <span class="blog-tag">[Tag 2]</span>
+        <span class="blog-tag">[Tag 3]</span>
+        <span class="blog-tag">[Tag 4]</span>
+        <span class="blog-tag">[Tag 5]</span>
+      </div>
+      
+      
+      <div class="blog-author">
+        <img src="brownHS.jpg" alt="Justin McGregor" class="author-image" />
+        <div class="author-info">
+          <h4>Justin McGregor</h4>
+          <p>As a dedicated realtor serving Saginaw, Bay City, and Midland, I combine market expertise and a client-first approach to deliver exceptional, trustworthy results.</p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+</div>
+
+<!-- JavaScript for navigation and functionality -->
+<!-- <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Toggle between blog index and full posts
+    const blogLinks = document.querySelectorAll('.read-more, .back-to-blog');
+    
+    blogLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // This is just for demo purposes - in a real implementation,
+        // these links would navigate to separate HTML pages
+        alert('In a live implementation, this link would navigate to the full article or blog index page.');
+      });
+    });
+    
+    // Social share buttons functionality
+    const socialButtons = document.querySelectorAll('.social-button');
+    
+    socialButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        alert('Social sharing functionality would be implemented here in the live version.');
+      });
+    });
+    
+    
+    // Smooth scroll for table of contents links
+    document.querySelectorAll('.table-of-contents a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
+</script> -->
+</body>
+</html>
