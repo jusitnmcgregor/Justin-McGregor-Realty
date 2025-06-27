@@ -398,7 +398,7 @@
       padding: 2.5rem;
     }
     
-    .listing, .pending {
+    .listing, .pending, .sold{
       background: rgba(255, 255, 255, 0.9);
       border-radius: 15px;
       overflow: hidden;
@@ -409,18 +409,18 @@
       backdrop-filter: blur(15px);
     }
     
-    .listing:hover, .pending:hover {
+    .listing:hover, .pending:hover, .sold:hover{
       transform: translateY(-10px);
       box-shadow: 0 25px 50px rgba(0,0,0,0.15);
     }
     
     .listing::before {
-      content: 'Featured';
+      content: 'Active';
       position: absolute;
-      top: 20px;
+      top: 15px;
       right: -30px;
-      background: var(--accent-gradient);
-      color: var(--dark);
+      background: green;
+      color: white;
       padding: 5px 30px;
       transform: rotate(45deg);
       font-size: 0.75rem;
@@ -437,6 +437,23 @@
       top: 20px;
       right: -30px;
       background: rgb(15, 2, 247);
+      color: white;
+      padding: 5px 30px;
+      transform: rotate(45deg);
+      font-size: 0.75rem;
+      font-weight: 500;
+      z-index: 1;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .sold::before {
+      content: 'Sold';
+      position: absolute;
+      top: 10px;
+      right: -30px;
+      background: rgb(247, 2, 15);
       color: white;
       padding: 5px 30px;
       transform: rotate(45deg);
@@ -469,14 +486,14 @@
       opacity: 1;
     }
     
-    .listing img, .pending img {
+    .listing img, .pending img, .sold img {
       width: 100%;
       height: 250px;
       object-fit: cover;
       transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     
-    .listing:hover img, .pending:hover img {
+    .listing:hover img, .pending:hover img, .sold:hover img {
       transform: scale(1.1);
     }
     
@@ -506,7 +523,7 @@
       letter-spacing: 0.3px;
     }
     
-    .listing:hover .listing-details p::after, .pending:hover .listing-details p::after {
+    .listing:hover .listing-details p::after, .pending:hover .listing-details p::after, .sold:hover .listing-details p::after{
       opacity: 1;
       transform: translateX(0);
     }
@@ -1177,7 +1194,7 @@
 <section class="section" id="my-listings">
 <h2>My Listings</h2>
 <div class="my-listings-grid">
-<div class="pending">
+<div class="sold">
 <div class="listing-container">
 <img alt="Listing 1" src="https://cdnparap80.paragonrels.com/ParagonImages/Property/P8/MIMLS/50172544/0/640/480/be33939e4ffd2c2a5267f1cf91eef5de/7/790a1fa452c729e14201f9b9312f7d2f/50172544-490221d9-2116-4482-8843-271d83e2e572.JPG"/>
 </div>
@@ -1251,7 +1268,7 @@
 </a>
 </div>
 </div>
-<div class="listing">
+<div class="pending">
 <div class="listing-container">
 <img src="https://cdnparap80.paragonrels.com/ParagonImages/Property/P8/MIMLS/50178389/0/640/480/9fae586de84f7b2a1ba0db0382c2a131/7/3d86ec068181067f91f17b877b977af6/50178389-95ca6ac8-c872-475e-87bf-2a30697a215d.JPG">
 </div>
